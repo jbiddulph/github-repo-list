@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from '@angular/common/http';
-import {AccidentdataService} from './accidentdata.service';
+import {GithubdataService} from './githubdata.service';
 import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { AgGridModule } from 'ag-grid-angular';
     HttpClientModule,
     AgGridModule.withComponents([])
   ],
-  providers: [AccidentdataService],
+  providers: [GithubdataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

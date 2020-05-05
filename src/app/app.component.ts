@@ -1,29 +1,29 @@
 import {Component, OnInit} from '@angular/core';
-import {Accident} from './models/accident.model';
-import {AccidentdataService} from './accidentdata.service';
+import {Github} from './models/github.model';
+import {GithubdataService} from './githubdata.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit{
-  accidents$: Accident[];
+export class AppComponent implements OnInit {
+  githubs$: Github[];
+  private ImageFormatterComponent: any;
 
-  constructor(private accidentService: AccidentdataService) {}
+  constructor(private githubService: GithubdataService) {}
 
   columnDefs = [
-    {headerName: 'ID', field: 'id', sortable: true},
-    {headerName: 'Lat', field: 'lat', sortable: true},
-    {headerName: 'Lon', field: 'lon', sortable: true},
-    {headerName: 'Location', field: 'location', sortable: true, filter: true},
-    {headerName: 'Date', field: 'date', sortable: true},
-    {headerName: 'Severity', field: 'severity', sortable: true, filter: true},
-    {headerName: 'Borough', field: 'borough', sortable: true, filter: true }
+    {headerName: 'ID', field: 'id', width: 80, sortable: true},
+    {headerName: 'Name', field: 'name', sortable: true},
+    {headerName: 'Owner', field: 'owner.login', sortable: true},
+    {headerName: 'Owner URL', field: 'owner.url', sortable: true},
+    {headerName: 'html url', field: 'html_url', sortable: true, filter: true},
+    {headerName: 'Description', field: 'description', sortable: true}
   ];
 
   ngOnInit() {
-    return this.accidentService.getAccidents()
-      .subscribe(data => this.accidents$ = data);
+    return this.githubService.getGithubs()
+      .subscribe(data => this.githubs$ = data);
   }
 }

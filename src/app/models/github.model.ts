@@ -1,4 +1,4 @@
-export class Accident {
+export class Github {
   id: number;
   lat: number;
   lon: number;

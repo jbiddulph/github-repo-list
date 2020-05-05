@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AccidentdataService } from './accidentdata.service';
+import { GithubdataService } from './githubdata.service';
 
 describe('AccidentdataService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: AccidentdataService = TestBed.get(AccidentdataService);
+    const service: GithubdataService = TestBed.get(GithubdataService);
     expect(service).toBeTruthy();
   });
 });
